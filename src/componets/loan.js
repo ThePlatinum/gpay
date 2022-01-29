@@ -215,6 +215,12 @@ export default function Loan() {
               <br /> <span className="bold">“BVN”</span> means Biometric Verification Number used by the banking industry in Nigeria and issued by a CBN approved financial institution.
               <br /> <span className="bold">“Loan”</span> means the principal amount of the loan (together with any interest and fees due on the loan) made or to be made to you under this Agreement from time to time as the context requires, or, the principal amount outstanding for the time being of that loan.
             </p>
+            <h4>2. Interest Information</h4>
+            These section defined the interest information that you agree to by submitting this form:
+            <p className="tabbed">
+                <li>The interest rate is fixed at <b>10%</b> monthly.</li>
+                <li>The repayment plan is based on the duration of your loan request, and each monthly payment covers the interest accuresd for that month</li>
+            </p>
             <br /> <br />
           </div>
 
