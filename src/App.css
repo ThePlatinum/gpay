@@ -1,38 +1,180 @@
 .App {
+  text-align: left;
+}
+
+.banner {
+  padding: 4vw;
+  background-color: #1F5ED850;
+}
+
+header {
+  padding: 1vw;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+footer {
+  padding: 6vw;
+  background-color: #f5deb3;
+}
+
+.form {
+  padding: 3vw;
+  font-size: 1.1rem;
+}
+
+.row {
+  --bs-gutter-x: 0 !important;
+}
+
+.row .formelement {
+  padding: 1vw;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.center {
   text-align: center;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tag {
+  font-size: 1.2rem;
+  font-weight: 300;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.submitBtn {
+  background-color: #1F5ED8;
+  color: white;
+  border: 0;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  font-size: 1.2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navigator {
+  padding-left: 3vw;
+  padding-top: 3vw;
+  box-shadow: 1px 0px 0px #C4C4C4;
+}
+
+.active {
+  background-color: #C4C4C4;
+  padding-left: 15px !important;
+}
+
+.menuItem {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  padding-left: 13px;
+}
+
+.mb-3{
+  box-shadow: -2px 0px 0px #1F5ED8;
+}
+
+.terms {
+  margin-top: 10px;
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.issue {
+  margin-top: 10px;
+}
+
+.loginBody {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 25vh;
+}
+
+.inner {
+  width: 50vw;
+}
+
+.listArea {
+  padding: 2vw;
+}
+
+.tr {
+  cursor: pointer;
+}
+
+.viewTable {
+  padding: 2vw;
+  font-size: 1.2rem;
+}
+
+.homeSpace {
+  padding: 2vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 60vh;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.anim {
+  text-align: left;
+  padding: 2vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cardHold {
+  display: flex;
+}
+
+.card {
+  padding: 10vh;
+  text-align: center;
+  margin: 5vw;
+  cursor: pointer;
+  box-shadow: -2px 2px 0px #1F5ED8;
+}
+
+.interest{
+  background-color: #80808080;
+  width: 95%;
+  margin: 2%;
+  border-radius: 5px;
+  border: 1px solid #80808080;
+  font-weight: 500;
+  font-size: larger;
+  padding: 1vw;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.tabbed{
+  margin-left: 15px;
+}
+
+.viewImage{
+  width: 100%;
+  padding: 1px;
+  border: 1px solid;
+}
+
+.success {
+  width: 100%;
+  padding: 20vh 10vw;
+}
+
+.successCard {
+  width: 100%;
+  border: 1px solid wheat;
+  text-align: center;
+  padding: 20vh 10vw;
+}
+
+#error {
+  text-align:center;
+  color:red;
 }
