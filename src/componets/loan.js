@@ -59,7 +59,6 @@ export default function Loan() {
     fetch('https://mgndraft.000webhostapp.com/api/addloan?tbl=loan', requestOptions)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         if(data[0].status === 'Submitted') navigate('/user/success')
         else {
           setloaderRef(true)
@@ -67,7 +66,6 @@ export default function Loan() {
         }
       })
       .catch(error => {
-        console.log('Error: ',error)
         setloaderRef(true)
         setError('An Error Occured, Please try again')
       })
@@ -141,17 +139,24 @@ export default function Loan() {
           </div>
           <div className='formelement col-md-6'>
             Loan Duration
-            <Input required name='loanDuration' disabled type='select' size='lg' >
+            <Input required name='loanDuration' type='select' size='lg' >
               <option>
-                {/* 4 Weeks
-            </option>
-            <option>
-              10 Weeks
-            </option><option>
-              3 Months
-            </option>
-            <option> */}
                 1 Month
+              </option>
+              <option>
+                2 Months
+              </option>
+              <option>
+                3 Months
+              </option>
+              <option>
+                4 Months
+              </option>
+              <option>
+                5 Months
+              </option>
+              <option>
+                6 Months
               </option>
             </Input>
           </div>
