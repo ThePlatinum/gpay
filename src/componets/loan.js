@@ -3,7 +3,8 @@ import { Input, Button, Form, FormGroup } from "reactstrap";
 import { banksList } from '../banks'
 import { useNavigate } from "react-router"
 import '../preloader.css'
-let nodemailer = require('nodemailer');
+import emailjs, { init } from '@emailjs/browser';
+init("user_ngIsUTPsb5AEBQ3b49qFi");
 const states = require('../states')
 const lgas = require('../lgas')
 
@@ -61,30 +62,14 @@ export default function Loan() {
       .then(response => response.json())
       .then(data => {
         if(data[0].status === 'Submitted') {
+
           //Send Mail
-          let transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-              user: 'platinumemirate@gmail.com',
-              pass: 'adedayo6192'
-            }
-          });
-
-          let mailOptions = {
-            from: 'platinumemirate@gmail.com',
-            to: email,
-            subject: 'Your PGAY Loan Application',
-            text: 'That was easy!'
-          };
-
-          transporter.sendMail(mailOptions, function(error, info){
-            if (error) {
-              console.log(error);
-            } else {
-              console.log('Email sent: ' + info.response);
-            }
-          });
-
+          emailjs.send("service_ozw18ud","template_7l7649x",{
+            message: `Your GPay Loan application of ${ammount} to be repaid over ${loanDuration} have been received and will be reviewed shortly.`,
+            to_name: `${firstName} ${otherName} ${lastName}`,
+            to_email: `${email}`,
+            });
+          
           navigate('/user/success')
         }
         else {

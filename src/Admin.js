@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Login from './componets/login';
 import Manage from './componets/manage';
 import GPay from './GPay Logo.png'
-import { Button, Collapse, Nav, Navbar, NavbarBrand, NavbarText, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+import { Button, Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 
 export default function Admin() {
 

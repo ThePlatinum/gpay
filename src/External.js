@@ -6,7 +6,7 @@ import Loan from './componets/loan';
 import { useNavigate } from "react-router"
 import Success from './componets/success';
 import GPay from './GPay Logo.png'
-import { Button, Collapse, Nav, Navbar, NavbarBrand, NavbarText, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+import { Button, Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 
 export default function External({match}) {
   const [bannerTitle, setTitle] = useState('Home')

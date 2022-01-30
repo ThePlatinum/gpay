@@ -90,7 +90,8 @@ export default function View() {
         </div>
       </div>
       <div className='row '>
-        <Button > Approve </Button>
+        <div  className='row col-sm-6' style={{padding:'1vw'}}><Button color="primary"> Approve </Button></div>
+        <div  className='row col-sm-6' style={{padding:'1vw'}}><Button color="danger"> Delete </Button></div>
       </div>
     </div>
   )
