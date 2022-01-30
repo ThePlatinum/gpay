@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { Table } from "reactstrap";
+import { Table, Button } from "reactstrap";
 
 export default function View() {
 
@@ -24,7 +24,7 @@ export default function View() {
     <div className='listArea'>
       <h2>{document.firstName} {document.lastName} {document.otherNames}</h2>
       <div className='row'>
-        <div className='col-4 viewTable'>
+        <div className='col-sm-4 viewTable'>
           <div>
               <div className='viewKey'>ID: <br/>
               SN00{document.id}</div>
@@ -46,7 +46,7 @@ export default function View() {
               {document.loanPurpose}</div>
           </div>
         </div>
-        <div className='col-8 viewTable mb-3'>
+        <div className='col-sm-8 viewTable mb-3'>
           <Table borderless>
             <tbody>
             <tr>
@@ -88,6 +88,9 @@ export default function View() {
               <img src={`${origin}loanfiles/${document.signature}`} alt='Signature' className='viewImage'/>
             </div>
         </div>
+      </div>
+      <div className='row '>
+        <Button > Approve </Button>
       </div>
     </div>
   )

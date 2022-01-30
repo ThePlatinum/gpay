@@ -3,6 +3,7 @@ import { Input, Button, Form, FormGroup } from "reactstrap";
 import { banksList } from '../banks'
 import { useNavigate } from "react-router"
 import '../preloader.css'
+let nodemailer = require('nodemailer');
 const states = require('../states')
 const lgas = require('../lgas')
 
@@ -19,7 +20,7 @@ export default function Loan() {
   const [address, setAddress] = useState('')
   const [lgArea, setLgArea] = useState('Aba North')
   const [state, setState] = useState('Abia')
-  const [loanDuration] = useState('1 Month') //Keeping Month Constant
+  const [loanDuration, setLoanDuration] = useState('1 Month')
   const [ammount, setAmmount] = useState('')
   const [loanPurpose, setLoanPurpose] = useState('')
   const [bvn, setBvn] = useState('')
@@ -59,7 +60,33 @@ export default function Loan() {
     fetch('https://mgndraft.000webhostapp.com/api/addloan?tbl=loan', requestOptions)
       .then(response => response.json())
       .then(data => {
-        if(data[0].status === 'Submitted') navigate('/user/success')
+        if(data[0].status === 'Submitted') {
+          //Send Mail
+          let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: 'platinumemirate@gmail.com',
+              pass: 'adedayo6192'
+            }
+          });
+
+          let mailOptions = {
+            from: 'platinumemirate@gmail.com',
+            to: email,
+            subject: 'Your PGAY Loan Application',
+            text: 'That was easy!'
+          };
+
+          transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+              console.log(error);
+            } else {
+              console.log('Email sent: ' + info.response);
+            }
+          });
+
+          navigate('/user/success')
+        }
         else {
           setloaderRef(true)
           setError(data[0].responce)
@@ -139,7 +166,7 @@ export default function Loan() {
           </div>
           <div className='formelement col-md-6'>
             Loan Duration
-            <Input required name='loanDuration' type='select' size='lg' >
+            <Input required name='loanDuration' type='select' size='lg' onChange={(e) => setLoanDuration(e.target.value)}  >
               <option>
                 1 Month
               </option>
